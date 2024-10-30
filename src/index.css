@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding: 4rem 0; /* Adjust this if you need more/less space */
+}
+
+/* Ensure sections don't overlap */
+.section + .section {
+  margin-top: 2rem; /* Adjust this margin to create space between sections */
+}
+
+/* Video section specific */
+.videos-section {
+  padding-top: 2rem; /* Reducing space at the top if needed */
+  padding-bottom: 2rem; /* Reducing space at the bottom to minimize white space */
+}
+
+/* Specific adjustments for screen sizes */
+@media (min-width: 584px) {
+  .hero-section {
+    margin-bottom: 4rem; /* Margin below the hero section */
+  }
+}
+
+/* Video grid styles */
+.video-container {
+  transform-origin: center;
+  will-change: transform;
+  border-radius: 8px; /* Add some border radius */
+  overflow: hidden; /* Ensures content stays within the box */
+  z-index: 1;
+}
+
+.video-container:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
